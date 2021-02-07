@@ -72,75 +72,7 @@
     </ul>
   </nav>
   
-  <script>
-    
-    const themeMap = {
-  dark: "light",
-  light: "solar",
-  solar: "dark"
-};
-
-const theme = localStorage.getItem('theme')
-  || (tmp = Object.keys(themeMap)[0],
-      localStorage.setItem('theme', tmp),
-      tmp);
-const bodyClass = document.body.classList;
-bodyClass.add(theme);
-
-function toggleTheme() {
-  const current = localStorage.getItem('theme');
-  const next = themeMap[current];
-
-  bodyClass.replace(current, next);
-  localStorage.setItem('theme', next);
-}
-
-document.getElementById('themeButton').onclick = toggleTheme;
-
-    
-    document.onkeydown = function(e) {
-    if(e.keyCode == 123) {
-     return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-     return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-     return false;
-    }
-      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-     return false;
-    }
-
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
-     return false;
-    }      
- }
-    
-    jQuery(document).ready(function($){
-$(document).keydown(function(event) {
-var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
-
-if (event.ctrlKey && (pressedKey == "c" || pressedKey == "u")) {
-alert('Sorry, This Functionality Has Been Disabled!');
-//disable key press porcessing
-return false;
-}
-});
-});
-    
-  </script>
-
-  <main>
-    
-    <center>
-    <p class="kwept1">Shin'geki<span class="kwept2">cloud</span></p>
-    </center>
-
-  </main>
-</body>
-  
-  <style>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 
@@ -396,5 +328,73 @@ main {
   font-family: 'fredoka one', sans-serif;
 }
   </style>
+  
+  <script>
+    
+    const themeMap = {
+  dark: "light",
+  light: "solar",
+  solar: "dark"
+};
+
+const theme = localStorage.getItem('theme')
+  || (tmp = Object.keys(themeMap)[0],
+      localStorage.setItem('theme', tmp),
+      tmp);
+const bodyClass = document.body.classList;
+bodyClass.add(theme);
+
+function toggleTheme() {
+  const current = localStorage.getItem('theme');
+  const next = themeMap[current];
+
+  bodyClass.replace(current, next);
+  localStorage.setItem('theme', next);
+}
+
+document.getElementById('themeButton').onclick = toggleTheme;
+
+    
+    document.onkeydown = function(e) {
+    if(e.keyCode == 123) {
+     return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+     return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+     return false;
+    }
+      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+     return false;
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+     return false;
+    }      
+ }
+    
+    jQuery(document).ready(function($){
+$(document).keydown(function(event) {
+var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
+
+if (event.ctrlKey && (pressedKey == "c" || pressedKey == "u")) {
+alert('Sorry, This Functionality Has Been Disabled!');
+//disable key press porcessing
+return false;
+}
+});
+});
+    
+  </script>
+
+  <main>
+    
+    <center>
+    <p class="kwept1">Shin'geki<span class="kwept2">cloud</span></p>
+    </center>
+
+  </main>
+</body>
   
 </html>
